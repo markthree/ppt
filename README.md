@@ -1,11 +1,23 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# ppt
 
-To start the slide show:
+我的演讲 `ppt`
 
-- `npm install`
-- `npm run dev`
-- visit http://localhost:3030
+<br />
 
-Edit the [slides.md](./slides.md) to see the changes.
+## Usage
 
-Learn more about Slidev on [documentations](https://sli.dev/).
+```shell
+pnpm i # 安装依赖
+
+pnpm run dev # 启动服务
+```
+
+<br />
+
+
+## License
+
+Made with [markthree](https://github.com/markthree)
+
+Published under [MIT License](./LICENSE).
+
