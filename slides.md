@@ -1318,6 +1318,75 @@ import { naiveTheme, SwitchIcon } from 'vue-dark-switch'
 
 </v-clicks>
 
+
+---
+
+# <carbon-settings-services /> 环境变量配置支持
+
+<v-clicks>
+
+<div>
+
+   根目录下的 `.env` 用来对项目进行环境变量配置，以此来支持个性化需求
+
+</div>
+
+```shell
+# api baseURL
+VITE_API_BASE_URL = /api
+# 标题
+VITE_APP_TITLE = tov
+# markdown 渲染支持
+VITE_APP_MARKDOWN = true
+# 开发时的开发面板
+VITE_APP_DEV_TOOLS = true
+# 生产时 mock 支持
+VITE_APP_MOCK_IN_PRODUCTION = false
+# 生产时压缩算法，可选 gzip, brotliCompress, deflate, deflateRaw
+VITE_APP_COMPRESSINON_ALGORITHM = gzip
+# api 自动按需引入
+# 注意设置关闭时，其他的 api 自动按需引入也将自动关闭
+VITE_APP_API_AUTO_IMPORT = true
+# 项目级 api 自动按需导入
+VITE_APP_DIR_API_AUTO_IMPORT = true
+```
+
+</v-clicks>
+
+
+---
+
+# <carbon-settings-view /> 自动生成环境变量类型声明
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="dishait/vite-plugin-env-types" text-red-500 dark:text-red-200 />
+
+在 `vite` 项目中，我们虽然可以在 `.env` 中设置环境变量，并通过 `import.meta.env` 来使用它们。
+
+但类型提示很糟糕，这个功能可以自动生成类型声明以达到实时的类型提示，让你不需要关心和手动管理它们
+
+<div mt-5>
+
+例如，你在 `.env` 中写 
+
+</div>
+
+```shell
+# 注意这里的 VITE_APP 前缀是必需的
+VITE_APP_FOO=foo
+```
+
+那么在前端源码中，就可以访问到 👇
+
+```shell
+import.meta.env.VITE_APP_FOO # 有类型提示
+```
+
+</v-clicks>
+
+
+
 ---
 
 # <carbon-package text-md /> `gzip` 资源压缩支持
