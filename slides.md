@@ -1420,6 +1420,36 @@ VITE_APP_COMPRESSINON_ALGORITHM = gzip
 
 </v-clicks>
 
+
+---
+
+# <carbon-property-relationship text-md />  defineOptions 支持
+
+<v-clicks>
+
+<div>
+
+以前由 <Repo name="sxzz/vue-macros" /> 支持，`vue3.3` 起被内置了
+
+</div>
+
+```html
+<script setup lang="ts">
+	// 定义额外的 options
+	defineOptions({
+		name: 'Foo',
+	})
+</script>
+```
+
+<div mt-20 space-y-5>
+
+<carbon-link text-sm /> [cn.vuejs.org/api/sfc-script-setup.html#defineoptions](https://cn.vuejs.org/api/sfc-script-setup.html#defineoptions)
+
+</div>
+
+</v-clicks>
+
 ---
 layout: center 
 class: text-center 
