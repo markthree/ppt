@@ -1386,6 +1386,20 @@ import.meta.env.VITE_APP_FOO # 有类型提示
 </v-clicks>
 
 
+---
+
+# <carbon-cloud-logging text-md /> 生产环境自动移除开发日志
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="dishait/vite-plugin-removelog" text-red-500 dark:text-red-200 />
+
+生产环境下 console.log，console.warn 与 console.error 等日志会被自动移除掉，以避免开发时日志的泄漏。
+
+相比社区的其他方案，默认使用 `esbuild`，而非 `babel`，所以很快。
+
+</v-clicks>
+
 
 ---
 
