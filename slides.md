@@ -1225,7 +1225,98 @@ import { naiveTheme, SwitchIcon } from 'vue-dark-switch'
 </div>
 
 
+---
 
+# <carbon-progress-bar text-md /> 跳转进度条
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="rstacruz/nprogress" text-red-500 dark:text-red-200 />
+
+
+
+跳转进度条由 `nprogress` 实现，可在 `src/styles/main.css` 中调整配色。
+
+
+```css{|5}
+/** src/styles/main.css **/
+
+/** 省略其他样式 **/
+#nprogress .bar {
+	@apply bg-blue-700 bg-opacity-75; /** 配色 **/
+
+	position: fixed;
+	z-index: 1031;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 2px;
+}
+```
+
+`@apply` 由 <Repo name="@unocss/transformer-directives" /> 实现。
+
+</v-clicks>
+
+---
+
+# <carbon-ibm-cloud-kubernetes-service text-md /> 开发面板
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="webfansplz/vite-plugin-vue-devtools" text-red-500 dark:text-red-200 />
+
+该面板可以让你在开发过程中，了解项目的方方面面，目前仅在开发环境下有效
+
+![devtools](/tov-template/devtools.png)
+
+</v-clicks>
+
+---
+
+# <carbon-not-sent text-md />  <Badge :value="1" dark:text-white text-dark>漂亮的 404 页</Badge>
+
+<v-clicks>
+
+<div>
+
+   当用户访问不存在的路由时，我们应该给用户一个好看的 `404` 页面
+
+</div>
+
+你可以随便访问一个不存在的页面，例如 `/bucunzai`
+
+![notFound-dark](/tov-template/notFound-dark.png)
+
+</v-clicks>
+
+---
+
+# <carbon-not-sent text-md /> <Badge :value="2" dark:text-white text-dark>漂亮的 404 页</Badge>
+
+
+<v-clicks>
+
+<div>
+
+如果你不喜欢这个 `404` 封面，也可以在 `pages/[...notFound].vue` 中修改 `img` 标签的 `src`。
+
+</div>
+
+默认是 `32.svg`，支持 `1 ~ 33` 的 `svg`。
+
+```html{|5}
+<!-- 省略各种代码 -->
+<template>
+	<img 
+      class="cover" 
+      src="/notFound/32.svg" 
+      alt="page not found" />
+</template>
+```
+
+</v-clicks>
 
 ---
 layout: center 
