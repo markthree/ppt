@@ -1319,6 +1319,25 @@ import { naiveTheme, SwitchIcon } from 'vue-dark-switch'
 </v-clicks>
 
 ---
+
+# <carbon-package text-md /> `gzip` 资源压缩支持
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="vbenjs/vite-plugin-compression" text-red-500 dark:text-red-200 />
+
+生产环境下开箱即用的 gzip 资源压缩，无需配置。
+
+当然也支持调整在 `.env` 中配置 `VITE_APP_COMPRESSINON_ALGORITHM` 来调整算法
+
+```shell
+# 生产时压缩算法，可选 gzip, brotliCompress, deflate, deflateRaw
+VITE_APP_COMPRESSINON_ALGORITHM = gzip
+```
+
+</v-clicks>
+
+---
 layout: center 
 class: text-center 
 growX: 50 
