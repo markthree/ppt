@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@iconify-json/line-md':
-    specifier: ^1.1.24
-    version: 1.1.24
+    specifier: ^1.1.25
+    version: 1.1.25
   '@iconify-json/logos':
     specifier: ^1.1.31
     version: 1.1.31
@@ -21,14 +21,14 @@ devDependencies:
     specifier: latest
     version: 0.21.3
   bumpp:
-    specifier: ^9.1.0
-    version: 9.1.0
+    specifier: ^9.1.1
+    version: 9.1.1
   naive-ui:
     specifier: ^2.34.4
     version: 2.34.4(vue@3.3.4)
   vue-dark-switch:
-    specifier: ^1.0.0
-    version: 1.0.0(vite@4.3.9)(vue@3.3.4)
+    specifier: ^1.0.1
+    version: 1.0.1(vite@4.3.9)(vue@3.3.4)
 
 packages:
 
@@ -603,8 +603,8 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify-json/line-md@1.1.24:
-    resolution: {integrity: sha512-vHQnRZ3ZVDnrFoj8BMU0iTYR9404TrePP4UhCjkfOqkH4gibFoyM6JGO5OiIHv5m/GQvu4nteTICjklsRFUKpA==}
+  /@iconify-json/line-md@1.1.25:
+    resolution: {integrity: sha512-78d8RFQMj4zdGfEgPi74365sQD10aKyV8SoW6tY7vOH5hILIJQyI5xIzaX7QnsFrEm7UYzk+l1KoOaRfoHouxA==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -1659,8 +1659,8 @@ packages:
       update-browserslist-db: 1.0.11(browserslist@4.21.7)
     dev: true
 
-  /bumpp@9.1.0:
-    resolution: {integrity: sha512-m3+YD8uoa0VttG+RV4oKr3lK60gkUn1yPDaBTFwT7xrdJUsy7Jm0VYgx457HI3VPAOX8szLmy1x2y1QcvB+M8Q==}
+  /bumpp@9.1.1:
+    resolution: {integrity: sha512-T7/2QmRNhHRkH2+HgDs/xk4keom3nlCjwQn6kHdz0I0dQMVrs+YMOH5HyuhV0R3tha/tTYP030RG9uQKpQ9CRg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -4464,8 +4464,8 @@ packages:
     resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
     dev: true
 
-  /vue-dark-switch@1.0.0(vite@4.3.9)(vue@3.3.4):
-    resolution: {integrity: sha512-EGYKJqvkQJAd3Kw2x3lXwwdpdNJT9DrzUMy2S+OsHk9lwqss1UWH4CWyu8Fbn0GLrSUKVTljFTRTLSJKZukPXQ==}
+  /vue-dark-switch@1.0.1(vite@4.3.9)(vue@3.3.4):
+    resolution: {integrity: sha512-pgH9joytNjP6jYZ/Ml+Gqrbn9li/XWdyvDRfJnjQXz3vV1dW471ka+I7AvX3BwPA+3/dAZL7d++i7hco3/fFlw==}
     engines: {node: '>=16', pnpm: '>=7.0.0'}
     peerDependencies:
       vite: '>=4.0.0'

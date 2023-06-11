@@ -10,13 +10,13 @@
     "release": "bumpp --commit --push --tag"
   },
   "devDependencies": {
-    "bumpp": "^9.1.0",
+    "@iconify-json/line-md": "^1.1.25",
+    "@iconify-json/logos": "^1.1.31",
     "@slidev/cli": "^0.42.4",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
-    "@iconify-json/line-md": "^1.1.24",
-    "@iconify-json/logos": "^1.1.31",
+    "bumpp": "^9.1.1",
     "naive-ui": "^2.34.4",
-    "vue-dark-switch": "^1.0.0"
+    "vue-dark-switch": "^1.0.1"
   }
 }
