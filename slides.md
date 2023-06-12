@@ -1730,6 +1730,76 @@ pnpm coverage
 </v-clicks>
 
 ---
+layout: two-cols
+class: 'px-2'
+---
+
+# <logos-pinia text-md /> pinia
+
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="vuejs/pinia" text-red-500 dark:text-red-200 />
+
+<div>
+
+下一代的状态管理库，比 `vuex` 更简单
+
+</div>
+
+你可以在 `src/stores` 中进行状态的定义 👇
+
+```ts
+// src/stores/counter.ts
+import { defineStore } from "pinia";
+
+export const useCounterStore = defineStore("counter", {
+  state: () => {
+    return { count: 0 };
+  },
+  actions: {
+    inc() {
+      this.count++;
+    },
+  },
+   persist: true // 是否持久化
+});
+```
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+<div mt-15 mb-5>
+
+定义完后在 `setup` 中直接使用即可
+
+```html
+<!-- src/pages/index.vue -->
+<script setup lang="ts">
+    import { useCounterStore } from "../stores/counter"
+    const Counter = useCounterStore()
+<script>
+
+<template>
+    <div @click="Counter.inc"> 
+      {{Counter.count}}
+   </div>
+</template>
+```
+
+</div>
+
+
+持久化插件 👇 
+
+<Repo name="prazdevs/pinia-plugin-persistedstate" />
+
+</v-clicks>
+
+---
 layout: center 
 class: text-center 
 growX: 50 
