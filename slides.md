@@ -1496,6 +1496,42 @@ http.post("...", { name: "张三", age: 20 });
 
 </v-clicks>
 
+
+---
+
+# <carbon-insert-syntax text-md /> tsx 支持
+
+<v-clicks>
+
+只需要 `tsx` 文件放在 `src/components` 下，即可直接在模板中使用。
+
+例如你有一个 `src/components/foo.tsx` 文件，那么即可直接在模板中使用。
+
+```tsx
+// src/components/foo.tsx
+export default defineComponent({
+  render() {
+    return <div>Test</div>;
+  },
+});
+```
+
+```html
+<template>
+	<foo />
+</template>
+```
+
+
+<div mt-20 space-y-5>
+
+<logos-npm-2 text-sm /> [npm · @vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
+
+</div>
+
+
+</v-clicks>
+
 ---
 layout: center 
 class: text-center 
