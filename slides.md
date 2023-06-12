@@ -1450,6 +1450,26 @@ VITE_APP_COMPRESSINON_ALGORITHM = gzip
 
 </v-clicks>
 
+
+---
+
+# <carbon-ibm-watson-assistant text-md /> 全局通用 toast 通知
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="euvl/vue-notification" text-red-500 dark:text-red-200 />
+
+你可以在 `src` 目录下所有文件中使用它 👇
+
+```ts
+// src 下任何文件都是可用的
+toast.info("信息");
+toast.error("失败");
+toast.warning("警告");
+toast.success("成功");
+```
+</v-clicks>
+
 ---
 layout: center 
 class: text-center 
