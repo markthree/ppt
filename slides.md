@@ -18,9 +18,11 @@ toggleDark(true)
 <div>vite + vue3 + ts</div>
 </h1>
 
-<a uppercase text-sm tracking-widest href="https://github.com/markthree" target="__blank">
-markthree
-</a>
+<footer text-gray-500>
+
+  ppt power by <Repo name="slidevjs/slidev"/>
+
+</footer>
 
 <img src="/tov-template/logo.png" w-40 abs-tr mt-30 mr-20 />
 
@@ -2007,6 +2009,6 @@ growY: 80
 # Thank You!
 
 
-<footer>
+<footer text-gray-500>
   ppt power by <Repo name="slidevjs/slidev"/>
 </footer>
