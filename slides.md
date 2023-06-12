@@ -1799,6 +1799,77 @@ export const useCounterStore = defineStore("counter", {
 
 </v-clicks>
 
+
+---
+layout: two-cols
+class: 'px-2'
+---
+
+# <carbon-user-speaker  text-md /> i18n 国际化
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="intlify/vue-i18n-next" text-red-500 dark:text-red-200 />
+
+<div>
+
+`locales` 中定义不同语言的 `yml` 即可在项目中做到开箱即用的国际化支持。
+
+</div>
+
+比如 `locales/en.yml` 定义英文
+
+```yml
+# locales/en.yml
+# English
+index: index
+about: about
+not-found: Notfound
+```
+
+又如 `locales/简体中文.yml` 定义中文
+
+```yml
+# locales/简体中文.yml
+# 中文
+index: 主页
+about: 关于
+not-found: 未找到页面
+```
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+<div mt-15 />
+
+此时在组件中即可这样用 
+
+```html
+<script setup>
+const { t, locale } = useI18n()
+
+function toggleLocale() {
+   if (locale.value === 'en') {
+      locale.value = '简体中文'
+   } else {
+      locale.value = 'en'
+   }
+}
+</script>
+
+<template>
+	<div cursor="pointer" @click="toggleLocale()">
+		language: {{ t('index') }} click me!!
+	</div>
+</template>
+```
+
+
+</v-clicks>
+
 ---
 layout: center 
 class: text-center 
