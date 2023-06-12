@@ -1958,6 +1958,26 @@ pnpm deps:fresh
 </v-clicks>
 
 ---
+
+# <carbon-change-catalog  text-md /> 自动版本更新并生成 CHANGELOG
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="unjs/changelogen" text-red-500 dark:text-red-200 />
+
+<div>
+
+自动进行版本更新，更新 `CHANGELOG.md` 以及发布 `github release` 
+
+</div>
+
+```shell
+pnpm run release
+```
+
+</v-clicks>
+
+---
 layout: center 
 class: text-center 
 growX: 50 
