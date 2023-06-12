@@ -1933,6 +1933,31 @@ const { data, loading, error } = useRequest(
 
 
 ---
+
+
+# <logos-renovatebot  text-md /> renovate 自动更新依赖
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="renovatebot/renovate" text-red-500 dark:text-red-200 />
+
+<div>
+
+`github` 的 [renovate](https://github.com/marketplace/renovate) 机器人会定期检查依赖，并向仓库提起 `pr`
+
+</div>
+
+当然你也可以手动更新依赖
+
+```shell
+pnpm deps:fresh
+```
+
+更新策略 <Repo name="unjs/renovate-config" /> 
+
+</v-clicks>
+
+---
 layout: center 
 class: text-center 
 growX: 50 
