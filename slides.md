@@ -1582,7 +1582,7 @@ export default defineComponent({
 
 ---
 
-# <carbon-align-box-bottom-left text-md /> echart 集成
+# <carbon-table-alias text-md /> echart 集成
 
 <v-clicks>
 
@@ -1593,6 +1593,34 @@ export default defineComponent({
 
 <Echarts />
 
+
+</v-clicks>
+
+
+---
+
+# <carbon-workflow-automation text-md /> 命令行自动创建与删除
+
+<v-clicks>
+
+
+<Repo fixed right-10 top-10 class="text-sm" name="plopjs/plop" text-red-500 dark:text-red-200 />
+
+<div>
+
+只要输入 👇，即可创建一个标准的页面或组件等
+
+</div>
+
+```shell
+pnpm auto:create
+```
+
+当然也可以进行删除 👇
+
+```shell
+pnpm auto:remove
+```
 
 </v-clicks>
 
