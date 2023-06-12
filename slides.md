@@ -1867,8 +1867,70 @@ function toggleLocale() {
 </template>
 ```
 
+</v-clicks>
+
+---
+layout: two-cols
+class: 'px-2'
+---
+
+# <carbon-ibm-z-cloud-mod-stack  text-md /> Mock 支持
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="vbenjs/vite-plugin-mock" text-red-500 dark:text-red-200 />
+
+`mock` 目录下模块的中导出默认的 `api` 资源
+
+例如 `mock/test.ts` 内导出
+
+```ts
+import { MockMethod } from "vite-plugin-mock";
+export default [
+  {
+    url: "/api/mock/get",
+    method: "get",
+    response: () => {
+      return {
+        code: 0,
+        data: {
+          name: "vben",
+        },
+      };
+    },
+  },
+] as MockMethod[];
+```
+
 
 </v-clicks>
+
+::right::
+
+<v-clicks>
+
+<div mt-15 />
+
+在 `src` 中就可以进行模拟请求。
+
+```html
+<script setup lang="ts">
+import { useRequest } from 'vue-request'
+
+const { data, loading, error } = useRequest(
+   () => http.get('/api/mock/get')
+)
+</script>
+
+<template>
+	<div>data: {{data}}</div>
+	<div>loading: {{loading}}</div>
+	<div>error: {{error}}</div>
+</template>
+```
+
+</v-clicks>
+
 
 ---
 layout: center 
