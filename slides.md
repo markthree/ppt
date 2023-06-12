@@ -1470,6 +1470,32 @@ toast.success("成功");
 ```
 </v-clicks>
 
+
+---
+
+# <carbon-http text-md /> 全局通用 axios 封装
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="axios/axios" text-red-500 dark:text-red-200 />
+
+封装了 [axios](https://www.axios-http.cn/)，你可以在 `src`
+目录下所有文件中使用它 👇
+
+```ts
+// src 下任何文件都是可用的
+http.get("...");
+http.post("...", { name: "张三", age: 20 });
+// ... 以此类推
+```
+
+上述 `http` 是 `axios` 单独创建的实例，具有简单错误提示，以及响应数据转换
+
+具体可见 `src/composables/http.ts`。
+
+
+</v-clicks>
+
 ---
 layout: center 
 class: text-center 
