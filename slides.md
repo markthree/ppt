@@ -1625,6 +1625,39 @@ pnpm auto:remove
 </v-clicks>
 
 ---
+
+# <carbon-magic-wand text-md /> Markdown 渲染
+
+<v-clicks>
+
+
+<Repo fixed right-10 top-10 class="text-sm" name="antfu/vite-plugin-vue-markdown" text-red-500 dark:text-red-200 />
+
+`markdown` 渲染可以用来书写一些简单的说明。
+
+只需要把 `src/pages` 目录下的页面后缀由 `.vue` 改为 `.md`，然后再改为 `markdown`
+语法即可。
+
+例如 `src/pages/about.md`
+
+```md
+## About Page
+
+> The page is markdown file
+```
+
+当你路由到 `/about` 后即可看到对应的 `markdown` 渲染。
+
+当然也支持在 `markdown` 中嵌入 `vue` 组件
+
+```md
+<!-- 例如你有一个 src/components/Counter.vue 组件，直接用即可，会自动按需引入 -->
+<Counter />  
+```
+
+</v-clicks>
+
+---
 layout: center 
 class: text-center 
 growX: 50 
