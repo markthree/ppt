@@ -1532,6 +1532,32 @@ export default defineComponent({
 
 </v-clicks>
 
+
+---
+
+# <carbon-parent-child text-md /> 路径别名 `~` 
+
+<v-clicks>
+
+<div>
+
+   `~` 路径将被导向项目的 `src` 目录，同时有更好的类型提示
+
+</div>
+
+```html
+<!-- src/pages/index.vue -->
+<script lang="ts" setup>
+	import { useDarks } from '~/composables/dark'
+
+	// 等价于
+	// import { useDarks } from "../composables/dark"
+</script>
+```
+
+
+</v-clicks>
+
 ---
 layout: center 
 class: text-center 
