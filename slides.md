@@ -1694,6 +1694,41 @@ SWR 是更现代的请求方式
 
 </v-clicks>
 
+
+---
+
+# <logos-vitest text-md /> vitest 单元测试
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="vitest-dev/vitest" text-red-500 dark:text-red-200 />
+
+在 `src/test` 目录中可以书写单元测试。
+
+```ts
+import { assert, describe, expect, it } from "vitest";
+
+describe("suite name", () => {
+  it("foo", () => {
+    expect(1 + 1).toEqual(2);
+  });
+});
+```
+
+然后在终端中输入命令即可测试
+
+```shell
+pnpm test
+```
+
+或者生成报告
+
+```shell
+pnpm coverage
+```
+
+</v-clicks>
+
 ---
 layout: center 
 class: text-center 
