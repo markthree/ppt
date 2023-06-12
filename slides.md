@@ -28,7 +28,7 @@ toggleDark(true)
 
 <div abs-br mx-10 my-12 flex="~" items-center text-sm text-right>
 
- <carbon-logo-github class="inline-block" mr-2 /> <a href="https://github.com/dishait/tov-template" target="__blank">github.com/dishait/tov-template</a>
+<Repo name="dishait/tov-template" />
 
 </div>
 
@@ -51,7 +51,8 @@ toggleDark(true)
 </v-clicks>
 </div>
 
-<carbon-fire text-15vw abs-tr mt-10 mr-10 />
+
+<img src="/tov-template/motivation.png" w-80 abs-tr mt-10 mr-10 />
 
 
 ---
@@ -76,7 +77,7 @@ class: 'px-2'
          <carbon-time /> <code>2022/1/8</code> 起开源至今
       </span>
       <span flex="~ gap-2" items-center>
-         <carbon-star /> <code>524</code> star，<code>134</code> fork
+         <carbon-star /> <code>527</code> star，<code>134</code> fork
       </span>
       <span flex="~ gap-2" items-center>
          <carbon-reference-architecture /> <code>369</code> 次 commit，<code>36</code> 个 feature
@@ -168,16 +169,67 @@ growY: 50
 
 
 ---
-layout: 'center' 
-class: 'text-center' 
-growX: 50 
-growY: 10
+layout: two-cols
+class: px-2
 ---
 
-<div v-click transition-all duration-500 :class="$slidev.nav.clicks === 0 ? 'op0' : $slidev.nav.clicks > 1 ? 'op50 text-2xl' : 'translate-y-10 text-4xl'">介绍</div>
+# <logos-pnpm text-md /> pnpm
 
-<div v-click>
-  <h1>特性</h1>
+> 一个依赖管理器，相比 `npm` 和 `yarn`
+
+<div my-2>
+<v-clicks>
+
+- 没有幽灵依赖
+
+- 支持 `monorepos` 
+
+- 比其他包管理器快 `2` 倍
+  
+</v-clicks>
+</div>
+<v-clicks>
+
+<div mt-20 space-y-5>
+
+<carbon-link text-sm /> [pnpm.io/zh · pnpm 官网](https://pnpm.io/zh/)
+
+</div>
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+# Usage
+
+> 如何使用？
+
+</v-clicks>
+
+<div my-2 space-y-2>
+<v-clicks>
+
+1. 安装 `pnpm`
+
+```shell
+npm i pnpm -g
+```
+
+2. 安装依赖
+
+```shell
+pnpm i # npm install
+```
+
+3. 安装对应依赖
+
+```shell
+pnpm i vue # npm install vue
+```
+
+</v-clicks>
 </div>
 
 
@@ -317,68 +369,69 @@ const count = ref(1)
 
 
 ---
-layout: two-cols
-class: px-2
----
 
-# <logos-pnpm text-md /> pnpm
+# <carbon-property-relationship text-md />  defineOptions
 
-> 一个依赖管理器，相比 `npm` 和 `yarn`
-
-<div my-2>
 <v-clicks>
 
-- 没有幽灵依赖
+<div>
 
-- 支持 `monorepos` 
+以前由 <Repo name="sxzz/vue-macros" /> 支持，`vue3.3` 起被内置了
 
-- 比其他包管理器快 `2` 倍
-  
-</v-clicks>
 </div>
-<v-clicks>
+
+```html
+<script setup lang="ts">
+	// 定义额外的 options
+	defineOptions({
+		name: 'Foo',
+	})
+</script>
+```
 
 <div mt-20 space-y-5>
 
-<carbon-link text-sm /> [pnpm.io/zh · pnpm 官网](https://pnpm.io/zh/)
+<carbon-link text-sm /> [cn.vuejs.org/api/sfc-script-setup.html#defineoptions](https://cn.vuejs.org/api/sfc-script-setup.html#defineoptions)
 
 </div>
 
 </v-clicks>
 
-::right::
+
+---
+
+# <logos-typescript-icon text-md pt-1 /> TypeScript 友好的
 
 <v-clicks>
 
-# Usage
+<div>
 
-> 如何使用？
+不需要重新配置，直接可以用 `ts` 书写
 
-</v-clicks>
-
-<div my-2 space-y-2>
-<v-clicks>
-
-1. 安装 `pnpm`
-
-```shell
-npm i pnpm -g
-```
-
-2. 安装依赖
-
-```shell
-pnpm i # npm install
-```
-
-3. 安装对应依赖
-
-```shell
-pnpm i vue # npm install vue
-```
-
-</v-clicks>
 </div>
+
+```ts
+// src/composables/foo.ts
+interface Foo {
+   bar: number
+}
+
+const foo: Foo = { bar: 1 }
+```
+
+或者 `SFC` 单文件组件上加 `lang="ts"` 来支持 `ts`
+
+```vue
+<script setup lang="ts">
+interface Bar { 
+   foo: number
+}
+
+const bar: Bar = { foo: 2 }
+</script>
+```
+
+</v-clicks>
 
 
 ---
@@ -555,6 +608,126 @@ class: px-2
 ```html
 我是非默认布局custom 我是首页
 ```
+
+</v-clicks>
+
+
+---
+
+# <carbon-not-sent text-md />  <Badge :value="1" dark:text-white text-dark>漂亮的 404 页</Badge>
+
+<v-clicks>
+
+<div>
+
+   当用户访问不存在的路由时，我们应该给用户一个好看的 `404` 页面
+
+</div>
+
+你可以随便访问一个不存在的页面，例如 `/bucunzai`
+
+![notFound-dark](/tov-template/notFound-dark.png)
+
+</v-clicks>
+
+---
+
+# <carbon-not-sent text-md /> <Badge :value="2" dark:text-white text-dark>漂亮的 404 页</Badge>
+
+
+<v-clicks>
+
+<div>
+
+如果你不喜欢这个 `404` 封面，也可以在 `pages/[...notFound].vue` 中修改 `img` 标签的 `src`。
+
+</div>
+
+默认是 `32.svg`，支持 `1 ~ 33` 的 `svg`。
+
+```html{|5}
+<!-- 省略各种代码 -->
+<template>
+	<img 
+      class="cover" 
+      src="/notFound/32.svg" 
+      alt="page not found" />
+</template>
+```
+
+</v-clicks>
+
+
+---
+
+# <carbon-magic-wand text-md /> Markdown 渲染
+
+<v-clicks>
+
+
+<Repo fixed right-10 top-10 class="text-sm" name="antfu/vite-plugin-vue-markdown" text-red-500 dark:text-red-200 />
+
+`markdown` 渲染可以用来书写一些简单的说明。
+
+只需要把 `src/pages` 目录下的页面后缀由 `.vue` 改为 `.md`，然后再改为 `markdown`
+语法即可。
+
+例如 `src/pages/about.md`
+
+```md
+## About Page
+
+> The page is markdown file
+```
+
+当你路由到 `/about` 后即可看到对应的 `markdown` 渲染。
+
+当然也支持在 `markdown` 中嵌入 `vue` 组件
+
+```md
+<!-- 例如你有一个 src/components/Counter.vue 组件，直接用即可，会自动按需引入 -->
+<Counter />  
+```
+
+</v-clicks>
+
+
+---
+
+# <logos-typescript-icon-round text-md /> tsx
+
+<v-clicks>
+
+<div>
+
+只需要 `tsx` 文件放在 `src/components` 下，即可直接在模板中使用。
+
+</div>
+
+例如你有一个 `src/components/foo.tsx` 文件，那么即可直接在模板中使用。
+
+```tsx
+// src/components/foo.tsx
+export default defineComponent({
+  render() {
+    return <div>Test</div>;
+  },
+});
+```
+
+```html
+<template>
+	<foo />
+</template>
+```
+
+
+<div mt-20 space-y-5>
+
+<logos-npm-2 text-sm /> [npm · @vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
+
+</div>
+
 
 </v-clicks>
 
@@ -854,6 +1027,77 @@ export default pinia // 默认导出的插件，将被自动安装
 
 
 ---
+layout: two-cols
+class: 'px-2'
+---
+
+# <logos-pinia text-md /> pinia
+
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="vuejs/pinia" text-red-500 dark:text-red-200 />
+
+<div>
+
+下一代的状态管理库，比 `vuex` 更简单
+
+</div>
+
+你可以在 `src/stores` 中进行状态的定义 👇
+
+```ts
+// src/stores/counter.ts
+import { defineStore } from "pinia";
+
+export const useCounterStore = defineStore("counter", {
+  state: () => {
+    return { count: 0 };
+  },
+  actions: {
+    inc() {
+      this.count++;
+    },
+  },
+   persist: true // 是否持久化
+});
+```
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+<div mt-15 mb-5>
+
+定义完后在 `setup` 中直接使用即可
+
+```html
+<!-- src/pages/index.vue -->
+<script setup lang="ts">
+    import { useCounterStore } from "../stores/counter"
+    const Counter = useCounterStore()
+<script>
+
+<template>
+    <div @click="Counter.inc"> 
+      {{Counter.count}}
+   </div>
+</template>
+```
+
+</div>
+
+
+持久化插件 👇 
+
+<Repo name="prazdevs/pinia-plugin-persistedstate" />
+
+</v-clicks>
+
+
+---
 
 # <logos-vueuse text-md pt-1 /> vueuse
 
@@ -886,35 +1130,145 @@ export default pinia // 默认导出的插件，将被自动安装
 
 ---
 
-# <logos-typescript-icon text-md pt-1 /> TypeScript 友好的
+# <carbon-ibm-watson-assistant text-md /> 全局通用 toast 通知
 
 <v-clicks>
 
-<div>
+<Repo fixed right-10 top-10 class="text-sm" name="euvl/vue-notification" text-red-500 dark:text-red-200 />
 
-不需要重新配置，直接可以用 `ts` 书写
+你可以在 `src` 目录下所有文件中使用它 👇
+
+```ts
+// src 下任何文件都是可用的
+toast.info("信息");
+toast.error("失败");
+toast.warning("警告");
+toast.success("成功");
+```
+</v-clicks>
+
+
+---
+
+# <carbon-http text-md /> 全局通用 axios 封装
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="axios/axios" text-red-500 dark:text-red-200 />
+
+封装了 [axios](https://www.axios-http.cn/)，你可以在 `src`
+目录下所有文件中使用它 👇
+
+```ts
+// src 下任何文件都是可用的
+http.get("...");
+http.post("...", { name: "张三", age: 20 });
+// ... 以此类推
+```
+
+上述 `http` 是 `axios` 单独创建的实例，具有简单错误提示，以及响应数据转换
+
+具体可见 `src/composables/http.ts`。
+
+
+</v-clicks>
+
+
+---
+
+# <carbon-scis-control-tower text-md /> SWR 请求
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="attojs/vue-request" text-red-500 dark:text-red-200 />
+
+
+SWR 是更现代的请求方式
+
+你可以这样用，例如请求 `/api/test`
+
+```html
+<script setup lang="ts">
+	import { useRequest } from 'vue-request'
+	const { data, loading, error } = useRequest(() => http.get('/api/test'))
+</script>
+
+<template>
+	<div>data: {{data}}</div>
+	<div>error: {{error}}</div>
+	<div>loading: {{loading}}</div>
+</template>
+```
+
+所有基本的数据，状态和缓存都帮你搞定了，不需要重新封装。
+
+<div mt-5>
+
+<carbon-link text-sm /> [zhuanlan.zhihu.com/p/89570321](https://zhuanlan.zhihu.com/p/89570321)
 
 </div>
 
-```ts
-// src/composables/foo.ts
-interface Foo {
-   bar: number
-}
+</v-clicks>
 
-const foo: Foo = { bar: 1 }
+
+---
+layout: two-cols
+class: 'px-2'
+---
+
+# <carbon-ibm-z-cloud-mod-stack  text-md /> Mock
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="vbenjs/vite-plugin-mock" text-red-500 dark:text-red-200 />
+
+`mock` 目录下模块的中导出默认的 `api` 资源
+
+例如 `mock/test.ts` 内导出
+
+```ts
+import { MockMethod } from "vite-plugin-mock";
+export default [
+  {
+    url: "/api/mock/get",
+    method: "get",
+    response: () => {
+      return {
+        code: 0,
+        data: {
+          name: "vben",
+        },
+      };
+    },
+  },
+] as MockMethod[];
 ```
 
-或者 `SFC` 单文件组件上加 `lang="ts"` 来支持 `ts`
 
-```vue
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+<div mt-15 />
+
+在 `src` 中就可以进行模拟请求。
+
+```html
 <script setup lang="ts">
-interface Bar { 
-   foo: number
-}
+import { useRequest } from 'vue-request'
 
-const bar: Bar = { foo: 2 }
+const { data, loading, error } = useRequest(
+   () => http.get('/api/mock/get')
+)
 </script>
+
+<template>
+	<div>data: {{data}}</div>
+	<div>loading: {{loading}}</div>
+	<div>error: {{error}}</div>
+</template>
 ```
 
 </v-clicks>
@@ -1263,327 +1617,6 @@ import { naiveTheme, SwitchIcon } from 'vue-dark-switch'
 
 ---
 
-# <carbon-ibm-cloud-kubernetes-service text-md /> 开发面板
-
-<v-clicks>
-
-<Repo fixed right-10 top-10 class="text-sm" name="webfansplz/vite-plugin-vue-devtools" text-red-500 dark:text-red-200 />
-
-该面板可以让你在开发过程中，了解项目的方方面面，目前仅在开发环境下有效
-
-![devtools](/tov-template/devtools.png)
-
-</v-clicks>
-
----
-
-# <carbon-not-sent text-md />  <Badge :value="1" dark:text-white text-dark>漂亮的 404 页</Badge>
-
-<v-clicks>
-
-<div>
-
-   当用户访问不存在的路由时，我们应该给用户一个好看的 `404` 页面
-
-</div>
-
-你可以随便访问一个不存在的页面，例如 `/bucunzai`
-
-![notFound-dark](/tov-template/notFound-dark.png)
-
-</v-clicks>
-
----
-
-# <carbon-not-sent text-md /> <Badge :value="2" dark:text-white text-dark>漂亮的 404 页</Badge>
-
-
-<v-clicks>
-
-<div>
-
-如果你不喜欢这个 `404` 封面，也可以在 `pages/[...notFound].vue` 中修改 `img` 标签的 `src`。
-
-</div>
-
-默认是 `32.svg`，支持 `1 ~ 33` 的 `svg`。
-
-```html{|5}
-<!-- 省略各种代码 -->
-<template>
-	<img 
-      class="cover" 
-      src="/notFound/32.svg" 
-      alt="page not found" />
-</template>
-```
-
-</v-clicks>
-
-
----
-
-# <carbon-settings-services /> 环境变量配置支持
-
-<v-clicks>
-
-<div>
-
-   根目录下的 `.env` 用来对项目进行环境变量配置，以此来支持个性化需求
-
-</div>
-
-```shell
-# api baseURL
-VITE_API_BASE_URL = /api
-# 标题
-VITE_APP_TITLE = tov
-# markdown 渲染支持
-VITE_APP_MARKDOWN = true
-# 开发时的开发面板
-VITE_APP_DEV_TOOLS = true
-# 生产时 mock 支持
-VITE_APP_MOCK_IN_PRODUCTION = false
-# 生产时压缩算法，可选 gzip, brotliCompress, deflate, deflateRaw
-VITE_APP_COMPRESSINON_ALGORITHM = gzip
-# api 自动按需引入
-# 注意设置关闭时，其他的 api 自动按需引入也将自动关闭
-VITE_APP_API_AUTO_IMPORT = true
-# 项目级 api 自动按需导入
-VITE_APP_DIR_API_AUTO_IMPORT = true
-```
-
-</v-clicks>
-
-
----
-
-# <carbon-settings-view /> 自动生成环境变量类型声明
-
-<v-clicks>
-
-<Repo fixed right-10 top-10 class="text-sm" name="dishait/vite-plugin-env-types" text-red-500 dark:text-red-200 />
-
-在 `vite` 项目中，我们虽然可以在 `.env` 中设置环境变量，并通过 `import.meta.env` 来使用它们。
-
-但类型提示很糟糕，这个功能可以自动生成类型声明以达到实时的类型提示，让你不需要关心和手动管理它们
-
-<div mt-5>
-
-例如，你在 `.env` 中写 
-
-</div>
-
-```shell
-# 注意这里的 VITE_APP 前缀是必需的
-VITE_APP_FOO=foo
-```
-
-那么在前端源码中，就可以访问到 👇
-
-```shell
-import.meta.env.VITE_APP_FOO # 有类型提示
-```
-
-</v-clicks>
-
-
----
-
-# <carbon-cloud-logging text-md /> 生产环境自动移除开发日志
-
-<v-clicks>
-
-<Repo fixed right-10 top-10 class="text-sm" name="dishait/vite-plugin-removelog" text-red-500 dark:text-red-200 />
-
-生产环境下 console.log，console.warn 与 console.error 等日志会被自动移除掉，以避免开发时日志的泄漏。
-
-相比社区的其他方案，默认使用 `esbuild`，而非 `babel`，所以很快。
-
-</v-clicks>
-
-
----
-
-# <carbon-package text-md /> `gzip` 资源压缩支持
-
-<v-clicks>
-
-<Repo fixed right-10 top-10 class="text-sm" name="vbenjs/vite-plugin-compression" text-red-500 dark:text-red-200 />
-
-生产环境下开箱即用的 gzip 资源压缩，无需配置。
-
-当然也支持调整在 `.env` 中配置 `VITE_APP_COMPRESSINON_ALGORITHM` 来调整算法
-
-```shell
-# 生产时压缩算法，可选 gzip, brotliCompress, deflate, deflateRaw
-VITE_APP_COMPRESSINON_ALGORITHM = gzip
-```
-
-</v-clicks>
-
-
----
-
-# <carbon-property-relationship text-md />  defineOptions 支持
-
-<v-clicks>
-
-<div>
-
-以前由 <Repo name="sxzz/vue-macros" /> 支持，`vue3.3` 起被内置了
-
-</div>
-
-```html
-<script setup lang="ts">
-	// 定义额外的 options
-	defineOptions({
-		name: 'Foo',
-	})
-</script>
-```
-
-<div mt-20 space-y-5>
-
-<carbon-link text-sm /> [cn.vuejs.org/api/sfc-script-setup.html#defineoptions](https://cn.vuejs.org/api/sfc-script-setup.html#defineoptions)
-
-</div>
-
-</v-clicks>
-
-
----
-
-# <carbon-ibm-watson-assistant text-md /> 全局通用 toast 通知
-
-<v-clicks>
-
-<Repo fixed right-10 top-10 class="text-sm" name="euvl/vue-notification" text-red-500 dark:text-red-200 />
-
-你可以在 `src` 目录下所有文件中使用它 👇
-
-```ts
-// src 下任何文件都是可用的
-toast.info("信息");
-toast.error("失败");
-toast.warning("警告");
-toast.success("成功");
-```
-</v-clicks>
-
-
----
-
-# <carbon-http text-md /> 全局通用 axios 封装
-
-<v-clicks>
-
-<Repo fixed right-10 top-10 class="text-sm" name="axios/axios" text-red-500 dark:text-red-200 />
-
-封装了 [axios](https://www.axios-http.cn/)，你可以在 `src`
-目录下所有文件中使用它 👇
-
-```ts
-// src 下任何文件都是可用的
-http.get("...");
-http.post("...", { name: "张三", age: 20 });
-// ... 以此类推
-```
-
-上述 `http` 是 `axios` 单独创建的实例，具有简单错误提示，以及响应数据转换
-
-具体可见 `src/composables/http.ts`。
-
-
-</v-clicks>
-
-
----
-
-# <carbon-insert-syntax text-md /> tsx 支持
-
-<v-clicks>
-
-<div>
-
-只需要 `tsx` 文件放在 `src/components` 下，即可直接在模板中使用。
-
-</div>
-
-例如你有一个 `src/components/foo.tsx` 文件，那么即可直接在模板中使用。
-
-```tsx
-// src/components/foo.tsx
-export default defineComponent({
-  render() {
-    return <div>Test</div>;
-  },
-});
-```
-
-```html
-<template>
-	<foo />
-</template>
-```
-
-
-<div mt-20 space-y-5>
-
-<logos-npm-2 text-sm /> [npm · @vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
-
-</div>
-
-
-</v-clicks>
-
-
----
-
-# <carbon-parent-child text-md /> 路径别名 `~` 
-
-<v-clicks>
-
-<div>
-
-   `~` 路径将被导向项目的 `src` 目录，同时有更好的类型提示
-
-</div>
-
-```html
-<!-- src/pages/index.vue -->
-<script lang="ts" setup>
-	import { useDarks } from '~/composables/dark'
-
-	// 等价于
-	// import { useDarks } from "../composables/dark"
-</script>
-```
-
-
-</v-clicks>
-
-
----
-
-# <carbon-align-box-bottom-left text-md /> 统一的代码规范与风格支持
-
-<v-clicks>
-
-<Repo fixed right-10 top-10 class="text-sm" name="eslint/eslint" text-red-500 dark:text-red-200 />
-
-由 [eslint](https://github.com/eslint/eslint) 提供的代码规范校验，使用
-[prettier](https://github.com/prettier/prettier) 统一代码风格。
-
-由 [husky](https://github.com/typicode/husky) +
-[lint-staged](https://github.com/okonet/lint-staged) 提供的 `commit` 时校验并自动格式化。
-
-
-</v-clicks>
-
----
-
 # <carbon-table-alias text-md /> echart 集成
 
 <v-clicks>
@@ -1595,209 +1628,6 @@ export default defineComponent({
 
 <Echarts />
 
-
-</v-clicks>
-
-
----
-
-# <carbon-workflow-automation text-md /> 命令行自动创建与删除
-
-<v-clicks>
-
-
-<Repo fixed right-10 top-10 class="text-sm" name="plopjs/plop" text-red-500 dark:text-red-200 />
-
-<div>
-
-只要输入 👇，即可创建一个标准的页面或组件等
-
-</div>
-
-```shell
-pnpm auto:create
-```
-
-当然也可以进行删除 👇
-
-```shell
-pnpm auto:remove
-```
-
-</v-clicks>
-
----
-
-# <carbon-magic-wand text-md /> Markdown 渲染
-
-<v-clicks>
-
-
-<Repo fixed right-10 top-10 class="text-sm" name="antfu/vite-plugin-vue-markdown" text-red-500 dark:text-red-200 />
-
-`markdown` 渲染可以用来书写一些简单的说明。
-
-只需要把 `src/pages` 目录下的页面后缀由 `.vue` 改为 `.md`，然后再改为 `markdown`
-语法即可。
-
-例如 `src/pages/about.md`
-
-```md
-## About Page
-
-> The page is markdown file
-```
-
-当你路由到 `/about` 后即可看到对应的 `markdown` 渲染。
-
-当然也支持在 `markdown` 中嵌入 `vue` 组件
-
-```md
-<!-- 例如你有一个 src/components/Counter.vue 组件，直接用即可，会自动按需引入 -->
-<Counter />  
-```
-
-</v-clicks>
-
-
----
-
-# <carbon-scis-control-tower text-md /> SWR 请求
-
-<v-clicks>
-
-<Repo fixed right-10 top-10 class="text-sm" name="attojs/vue-request" text-red-500 dark:text-red-200 />
-
-
-SWR 是更现代的请求方式
-
-你可以这样用，例如请求 `/api/test`
-
-```html
-<script setup lang="ts">
-	import { useRequest } from 'vue-request'
-	const { data, loading, error } = useRequest(() => http.get('/api/test'))
-</script>
-
-<template>
-	<div>data: {{data}}</div>
-	<div>error: {{error}}</div>
-	<div>loading: {{loading}}</div>
-</template>
-```
-
-所有基本的数据，状态和缓存都帮你搞定了，不需要重新封装。
-
-<div mt-5>
-
-<carbon-link text-sm /> [zhuanlan.zhihu.com/p/89570321](https://zhuanlan.zhihu.com/p/89570321)
-
-</div>
-
-</v-clicks>
-
-
----
-
-# <logos-vitest text-md /> vitest 单元测试
-
-<v-clicks>
-
-<Repo fixed right-10 top-10 class="text-sm" name="vitest-dev/vitest" text-red-500 dark:text-red-200 />
-
-在 `src/test` 目录中可以书写单元测试。
-
-```ts
-import { assert, describe, expect, it } from "vitest";
-
-describe("suite name", () => {
-  it("foo", () => {
-    expect(1 + 1).toEqual(2);
-  });
-});
-```
-
-然后在终端中输入命令即可测试
-
-```shell
-pnpm test
-```
-
-或者生成报告
-
-```shell
-pnpm coverage
-```
-
-</v-clicks>
-
----
-layout: two-cols
-class: 'px-2'
----
-
-# <logos-pinia text-md /> pinia
-
-
-<v-clicks>
-
-<Repo fixed right-10 top-10 class="text-sm" name="vuejs/pinia" text-red-500 dark:text-red-200 />
-
-<div>
-
-下一代的状态管理库，比 `vuex` 更简单
-
-</div>
-
-你可以在 `src/stores` 中进行状态的定义 👇
-
-```ts
-// src/stores/counter.ts
-import { defineStore } from "pinia";
-
-export const useCounterStore = defineStore("counter", {
-  state: () => {
-    return { count: 0 };
-  },
-  actions: {
-    inc() {
-      this.count++;
-    },
-  },
-   persist: true // 是否持久化
-});
-```
-
-</v-clicks>
-
-::right::
-
-<v-clicks>
-
-<div mt-15 mb-5>
-
-定义完后在 `setup` 中直接使用即可
-
-```html
-<!-- src/pages/index.vue -->
-<script setup lang="ts">
-    import { useCounterStore } from "../stores/counter"
-    const Counter = useCounterStore()
-<script>
-
-<template>
-    <div @click="Counter.inc"> 
-      {{Counter.count}}
-   </div>
-</template>
-```
-
-</div>
-
-
-持久化插件 👇 
-
-<Repo name="prazdevs/pinia-plugin-persistedstate" />
 
 </v-clicks>
 
@@ -1872,67 +1702,224 @@ function toggleLocale() {
 </v-clicks>
 
 ---
-layout: two-cols
-class: 'px-2'
----
 
-# <carbon-ibm-z-cloud-mod-stack  text-md /> Mock 支持
+# <logos-vitest text-md /> vitest 单元测试
 
 <v-clicks>
 
-<Repo fixed right-10 top-10 class="text-sm" name="vbenjs/vite-plugin-mock" text-red-500 dark:text-red-200 />
+<Repo fixed right-10 top-10 class="text-sm" name="vitest-dev/vitest" text-red-500 dark:text-red-200 />
 
-`mock` 目录下模块的中导出默认的 `api` 资源
-
-例如 `mock/test.ts` 内导出
+在 `src/test` 目录中可以书写单元测试。
 
 ```ts
-import { MockMethod } from "vite-plugin-mock";
-export default [
-  {
-    url: "/api/mock/get",
-    method: "get",
-    response: () => {
-      return {
-        code: 0,
-        data: {
-          name: "vben",
-        },
-      };
-    },
-  },
-] as MockMethod[];
+import { assert, describe, expect, it } from "vitest";
+
+describe("suite name", () => {
+  it("foo", () => {
+    expect(1 + 1).toEqual(2);
+  });
+});
 ```
 
+然后在终端中输入命令即可测试
+
+```shell
+pnpm test
+```
+
+或者生成报告
+
+```shell
+pnpm coverage
+```
 
 </v-clicks>
 
-::right::
+---
+
+# <carbon-ibm-cloud-kubernetes-service text-md /> 开发面板
 
 <v-clicks>
 
-<div mt-15 />
+<Repo fixed right-10 top-10 class="text-sm" name="webfansplz/vite-plugin-vue-devtools" text-red-500 dark:text-red-200 />
 
-在 `src` 中就可以进行模拟请求。
+该面板可以让你在开发过程中，了解项目的方方面面，目前仅在开发环境下有效
+
+![devtools](/tov-template/devtools.png)
+
+</v-clicks>
+
+---
+
+# <carbon-parent-child text-md /> 路径别名 `~` 
+
+<v-clicks>
+
+<div>
+
+   `~` 路径将被导向项目的 `src` 目录，同时有更好的类型提示
+
+</div>
 
 ```html
-<script setup lang="ts">
-import { useRequest } from 'vue-request'
+<!-- src/pages/index.vue -->
+<script lang="ts" setup>
+	import { useDarks } from '~/composables/dark'
 
-const { data, loading, error } = useRequest(
-   () => http.get('/api/mock/get')
-)
+	// 等价于
+	// import { useDarks } from "../composables/dark"
 </script>
+```
 
-<template>
-	<div>data: {{data}}</div>
-	<div>loading: {{loading}}</div>
-	<div>error: {{error}}</div>
-</template>
+
+</v-clicks>
+
+
+---
+
+# <carbon-settings-services /> 环境变量配置
+
+<v-clicks>
+
+<div>
+
+   根目录下的 `.env` 用来对项目进行环境变量配置，以此来支持个性化需求
+
+</div>
+
+```shell
+# api baseURL
+VITE_API_BASE_URL = /api
+# 标题
+VITE_APP_TITLE = tov
+# markdown 渲染支持
+VITE_APP_MARKDOWN = true
+# 开发时的开发面板
+VITE_APP_DEV_TOOLS = true
+# 生产时 mock 支持
+VITE_APP_MOCK_IN_PRODUCTION = false
+# 生产时压缩算法，可选 gzip, brotliCompress, deflate, deflateRaw
+VITE_APP_COMPRESSINON_ALGORITHM = gzip
+# api 自动按需引入
+# 注意设置关闭时，其他的 api 自动按需引入也将自动关闭
+VITE_APP_API_AUTO_IMPORT = true
+# 项目级 api 自动按需导入
+VITE_APP_DIR_API_AUTO_IMPORT = true
 ```
 
 </v-clicks>
 
+
+---
+
+# <carbon-settings-view /> 自动生成环境变量类型声明
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="dishait/vite-plugin-env-types" text-red-500 dark:text-red-200 />
+
+在 `vite` 项目中，我们虽然可以在 `.env` 中设置环境变量，并通过 `import.meta.env` 来使用它们。
+
+但类型提示很糟糕，这个功能可以自动生成类型声明以达到实时的类型提示，让你不需要关心和手动管理它们
+
+<div mt-5>
+
+例如，你在 `.env` 中写 
+
+</div>
+
+```shell
+# 注意这里的 VITE_APP 前缀是必需的
+VITE_APP_FOO=foo
+```
+
+那么在前端源码中，就可以访问到 👇
+
+```shell
+import.meta.env.VITE_APP_FOO # 有类型提示
+```
+
+</v-clicks>
+
+
+---
+
+# <carbon-align-box-bottom-left text-md /> 统一的代码规范与风格
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="eslint/eslint" text-red-500 dark:text-red-200 />
+
+由 [eslint](https://github.com/eslint/eslint) 提供的代码规范校验，使用
+[prettier](https://github.com/prettier/prettier) 统一代码风格。
+
+由 [husky](https://github.com/typicode/husky) +
+[lint-staged](https://github.com/okonet/lint-staged) 提供的 `commit` 时校验并自动格式化。
+
+
+</v-clicks>
+
+---
+
+# <carbon-package text-md /> `gzip` 资源压缩
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="vbenjs/vite-plugin-compression" text-red-500 dark:text-red-200 />
+
+生产环境下开箱即用的 gzip 资源压缩，无需配置。
+
+当然也支持调整在 `.env` 中配置 `VITE_APP_COMPRESSINON_ALGORITHM` 来调整算法
+
+```shell
+# 生产时压缩算法，可选 gzip, brotliCompress, deflate, deflateRaw
+VITE_APP_COMPRESSINON_ALGORITHM = gzip
+```
+
+</v-clicks>
+
+
+---
+
+# <carbon-cloud-logging text-md /> 生产环境自动移除开发日志
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="dishait/vite-plugin-removelog" text-red-500 dark:text-red-200 />
+
+生产环境下 console.log，console.warn 与 console.error 等日志会被自动移除掉，以避免开发时日志的泄漏。
+
+相比社区的其他方案，默认使用 `esbuild`，而非 `babel`，所以很快。
+
+</v-clicks>
+
+
+---
+
+# <carbon-workflow-automation text-md /> 命令行自动创建与删除
+
+<v-clicks>
+
+
+<Repo fixed right-10 top-10 class="text-sm" name="plopjs/plop" text-red-500 dark:text-red-200 />
+
+<div>
+
+只要输入 👇，即可创建一个标准的页面或组件等
+
+</div>
+
+```shell
+pnpm auto:create
+```
+
+当然也可以进行删除 👇
+
+```shell
+pnpm auto:remove
+```
+
+</v-clicks>
 
 ---
 
