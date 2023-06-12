@@ -16,7 +16,9 @@
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "bumpp": "^9.1.1",
+    "echarts": "^5.4.2",
     "naive-ui": "^2.34.4",
-    "vue-dark-switch": "^1.0.1"
+    "vue-dark-switch": "^1.0.1",
+    "vue-echarts": "^6.5.5"
   }
 }

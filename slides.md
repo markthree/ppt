@@ -1503,7 +1503,11 @@ http.post("...", { name: "张三", age: 20 });
 
 <v-clicks>
 
+<div>
+
 只需要 `tsx` 文件放在 `src/components` 下，即可直接在模板中使用。
+
+</div>
 
 例如你有一个 `src/components/foo.tsx` 文件，那么即可直接在模板中使用。
 
@@ -1572,6 +1576,22 @@ export default defineComponent({
 
 由 [husky](https://github.com/typicode/husky) +
 [lint-staged](https://github.com/okonet/lint-staged) 提供的 `commit` 时校验并自动格式化。
+
+
+</v-clicks>
+
+---
+
+# <carbon-align-box-bottom-left text-md /> echart 集成
+
+<v-clicks>
+
+
+<Repo fixed right-10 top-10 class="text-sm" name="ecomfe/vue-echarts" text-red-500 dark:text-red-200 />
+
+简单集成了 [vue-echarts](https://github.com/ecomfe/vue-echarts)，可以用来做图表展示
+
+<Echarts />
 
 
 </v-clicks>
