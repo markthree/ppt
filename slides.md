@@ -1657,6 +1657,43 @@ pnpm auto:remove
 
 </v-clicks>
 
+
+---
+
+# <carbon-scis-control-tower text-md /> SWR 请求
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="attojs/vue-request" text-red-500 dark:text-red-200 />
+
+
+SWR 是更现代的请求方式
+
+你可以这样用，例如请求 `/api/test`
+
+```html
+<script setup lang="ts">
+	import { useRequest } from 'vue-request'
+	const { data, loading, error } = useRequest(() => http.get('/api/test'))
+</script>
+
+<template>
+	<div>data: {{data}}</div>
+	<div>error: {{error}}</div>
+	<div>loading: {{loading}}</div>
+</template>
+```
+
+所有基本的数据，状态和缓存都帮你搞定了，不需要重新封装。
+
+<div mt-5>
+
+<carbon-link text-sm /> [zhuanlan.zhihu.com/p/89570321](https://zhuanlan.zhihu.com/p/89570321)
+
+</div>
+
+</v-clicks>
+
 ---
 layout: center 
 class: text-center 
