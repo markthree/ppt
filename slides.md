@@ -1558,6 +1558,24 @@ export default defineComponent({
 
 </v-clicks>
 
+
+---
+
+# <carbon-align-box-bottom-left text-md /> 统一的代码规范与风格支持
+
+<v-clicks>
+
+<Repo fixed right-10 top-10 class="text-sm" name="eslint/eslint" text-red-500 dark:text-red-200 />
+
+由 [eslint](https://github.com/eslint/eslint) 提供的代码规范校验，使用
+[prettier](https://github.com/prettier/prettier) 统一代码风格。
+
+由 [husky](https://github.com/typicode/husky) +
+[lint-staged](https://github.com/okonet/lint-staged) 提供的 `commit` 时校验并自动格式化。
+
+
+</v-clicks>
+
 ---
 layout: center 
 class: text-center 
