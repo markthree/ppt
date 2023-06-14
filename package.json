@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@iconify-json/line-md": "^1.1.25",
-    "@iconify-json/logos": "^1.1.32",
+    "@iconify-json/logos": "^1.1.33",
     "@slidev/cli": "^0.42.4",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
@@ -19,6 +19,6 @@
     "echarts": "^5.4.2",
     "naive-ui": "^2.34.4",
     "vue-dark-switch": "^1.0.1",
-    "vue-echarts": "^6.5.5"
+    "vue-echarts": "^6.6.0"
   }
 }

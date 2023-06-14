@@ -77,7 +77,7 @@ class: 'px-2'
          <carbon-time /> <code>2022/1/8</code> 起开源至今
       </span>
       <span flex="~ gap-2" items-center>
-         <carbon-star /> <code>527</code> star，<code>134</code> fork
+         <carbon-star /> <code>528</code> star，<code>134</code> fork
       </span>
       <span flex="~ gap-2" items-center>
          <carbon-reference-architecture /> <code>369</code> 次 commit，<code>36</code> 个 feature
